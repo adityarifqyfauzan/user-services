@@ -1,0 +1,28 @@
+syntax = "proto3";
+package role;
+
+option go_package="./role";
+
+service RoleServices {
+    rpc Create (RoleCreateRequest) returns (Role);
+    rpc FindAll (RoleFindAllRequest) returns (Roles);
+}
+
+message Role {
+    string id = 1;
+    string name = 2;
+    string slug = 3;
+}
+
+message RoleCreateRequest {
+    string name = 1;
+}
+
+message RoleFindAllRequest {
+    int64 page = 1;
+    int64 size = 2;
+}
+
+message Roles {
+    repeated Role roles = 1;
+}

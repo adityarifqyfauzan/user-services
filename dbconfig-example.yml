@@ -1,0 +1,5 @@
+development:
+  dialect: postgres
+  datasource: host=localhost dbname=user_service user=postgres password=password sslmode=disable
+  dir: migrations
+  table: migrations
